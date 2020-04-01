@@ -1,3 +1,4 @@
 mssql/backup/*
 mssql/log/*
 mssql/data/*
+.env
