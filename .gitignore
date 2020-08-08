@@ -2,4 +2,5 @@ mssql/backup/*
 mssql/log/*
 mssql/data/*
 .env
+localstack/data/
 wordpress/data/data/
