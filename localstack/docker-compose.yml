@@ -6,6 +6,7 @@ services:
     image: localstack/localstack
     ports:
       - "4566-4599:4566-4599" # ports of the different services
+      - "8085:8080"
     environment:
       - SERVICES=iam,s3,ec2,lambda,dynamodb
       - DEFAULT_REGION=sa-east-1 # This is the region where your localstack mocks to be running
