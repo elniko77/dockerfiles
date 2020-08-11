@@ -24,7 +24,7 @@
     aws s3 cp test.txt s3://mibucket/test.txt
     aws s3 ls s3://mibucket
 
-##### aws-local ##### 
+##### aws-local (https://github.com/localstack/awscli-local) ##### 
 
    Para no tener que poner los endpoints, instalar awscli-local
 
