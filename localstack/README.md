@@ -24,5 +24,14 @@
     aws s3 cp test.txt s3://mibucket/test.txt
     aws s3 ls s3://mibucket
 
+##### aws-local ##### 
 
+   Para no tener que poner los endpoints, instalar awscli-local
 
+    pip install awscli-local
+
+   Variables de entorno:
+   
+    LOCALSTACK_HOST: ip donde corre localstack
+    USE_SSL: usar ssl hacia local  (false por default)
+    
