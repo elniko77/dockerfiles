@@ -39,3 +39,12 @@ services:
          dockerfile: ./php56apache/Dockerfile
       volumes:
          - ./data/sitio3apache/:/var/www/html
+
+  sitio4apache:
+      depends_on: 
+          - reverseproxy
+      build:
+         context: .
+         dockerfile: ./php56apache/Dockerfile
+      volumes:
+          - ./data/sitio4apache/:/var/www/html

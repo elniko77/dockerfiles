@@ -8,3 +8,4 @@ Crear en /etc/hosts
     127.0.0.1  sitio1php5.test
     127.0.0.1  sitio2php7.test
     127.0.0.1  sitio3apache.test
+    127.0.0.1  sitio4apache.test
