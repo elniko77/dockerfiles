@@ -1,0 +1,41 @@
+version: '2'
+
+services:
+  reverseproxy:
+      image: nginx:alpine
+      ports:
+          - 80:80
+          - 443:443
+      restart: always
+      volumes:
+          - ./configs/nginxreverse.conf:/etc/nginx/nginx.conf
+          - ./logs/reverseproxy/:/var/logs/nginx
+
+  sitio2php7:
+      depends_on: 
+          - reverseproxy
+      image: nginx:alpine
+      volumes:
+           - ./configs/sitio2php7.conf:/etc/nginx/conf.d/default.conf
+           - ./data/sitio2php7/:/var/www/html
+      links:
+           - sitio2php7fpm
+    
+  sitio2php7fpm:
+      build:
+        context: .
+        dockerfile: ./php7/Dockerfile
+            
+      volumes:
+         - ./configs/sitio2php7www.conf:/usr/local/etc/php/php.ini
+         - ./data/sitio2php7/:/var/www/html
+
+
+  sitio3apache:
+      depends_on: 
+          - reverseproxy
+      build:
+         context: .
+         dockerfile: ./php56apache/Dockerfile
+      volumes:
+         - ./data/sitio3apache/:/var/www/html

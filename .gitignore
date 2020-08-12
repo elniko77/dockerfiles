@@ -4,3 +4,4 @@ mssql/data/*
 .env
 localstack/data/
 wordpress/data/data/
+nginx-reverse-proxy/logs/reverseproxy/*
