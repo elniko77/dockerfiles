@@ -10,4 +10,8 @@ unifi/data/*
 unifi/log/*
 unifi/cert/*
 unifi/init/*
+mssql2017/backup/*
+mssql2017/data/*
+mssql2017/log/*
+
 

@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  db2:
-    container_name: mssql-server-2017
+  sqlserver2017:
+    container_name: mssql-server-2017-1
     build:
       context: .
       dockerfile: Dockerfile-2017

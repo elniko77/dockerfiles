@@ -1,0 +1,13 @@
+-- Ejemplo de restores de bases
+-- Paises
+--DROP DATABASE IF EXISTS [Paises];
+--CREATE DATABASE [Paises] ON PRIMARY
+--       (NAME = N'paises' , FILENAME= N'/var/opt/mssql/data/Paises.mdf'  )
+--       LOG ON (NAME= N'paises_log', FILENAME= N'/var/opt/mssql/log/Paises_log.ldf');
+
+-- Paises
+--DROP DATABASE IF EXISTS [Pagos];
+--RESTORE DATABASE [Pagos] FROM  DISK = N'/var/opt/mssql/backup/pagos.bak' WITH  
+--FILE = 1,  MOVE N'Pagos' TO N'/var/opt/mssql/data/pagos.mdf',  
+--MOVE N'Pagos_log' TO N'/var/opt/mssl/backup/pagos_log.ldf',  
+--REPLACE, NOUNLOAD,  STATS = 2
