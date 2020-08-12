@@ -24,7 +24,4 @@ services:
       - /var/www/html/glpi/:/var/www/html/glpi
     environment:
       - TIMEZONE=America/Argentina/Buenos_Aires
-      - MYSQL_DATABASE=glpi
-      - MYSQL_USER=glpi
-      - MYSQL_PASSWORD=test123
     restart: unless-stopped

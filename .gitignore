@@ -5,3 +5,9 @@ mssql/data/*
 localstack/data/
 wordpress/data/data/
 nginx-reverse-proxy/logs/reverseproxy/*
+unifi/db/*
+unifi/data/*
+unifi/log/*
+unifi/cert/*
+unifi/init/*
+
