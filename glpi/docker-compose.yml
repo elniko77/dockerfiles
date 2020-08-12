@@ -1,0 +1,30 @@
+version: "3.2"
+
+services:
+# #Mysql Container
+#   mysql:
+#     image: mysql:5.7.23
+#     container_name: mysql
+#     hostname: mysql
+#     volumes:
+#       - /var/lib/mysql:/var/lib/mysql
+#     env_file:
+#       - ./mysql.env
+#     restart: always
+
+  glpi:
+    image: diouxx/glpi
+    container_name : glpi
+    hostname: glpi
+    ports:
+      - "80:80"
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /var/www/html/glpi/:/var/www/html/glpi
+    environment:
+      - TIMEZONE=America/Argentina/Buenos_Aires
+      - MYSQL_DATABASE=glpi
+      - MYSQL_USER=glpi
+      - MYSQL_PASSWORD=test123
+    restart: unless-stopped
