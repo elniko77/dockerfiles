@@ -9,7 +9,7 @@ services:
       restart: always
       volumes:
           - ./configs/nginxreverse.conf:/etc/nginx/nginx.conf
-          - ./logs/reverseproxy/:/var/logs/nginx
+          - ./logs/reverseproxy/:/var/log/nginx
 
   sitio2php7:
       depends_on: 
