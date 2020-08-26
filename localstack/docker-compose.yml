@@ -15,6 +15,8 @@ services:
       - LAMBDA_EXECUTOR=local
       - DOCKER_HOST=unix:///var/run/docker.sock
       - HOST_TMP_FOLDER=./data
+      - PORT_WEB_UI=8080
+#     - LAMBDA_EXECUTOR=docker-reuse
     volumes:
       - "./data:/tmp/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
