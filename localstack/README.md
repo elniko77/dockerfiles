@@ -25,10 +25,19 @@
     aws s3 ls s3://mibucket
 
 ##### sns (Simple Notification Service #####
+    Listar:
+    aws --endpoint-url=http://localhost:4575 sns list-topics
+    Crear notificacion:
+    aws --endpoint-url=http://localhost:4575 sns create-topic --name minotif
+    Suscripcion al tema:
+    aws --endpoint-url=http://localhost:4575 sns subscribe --topic-arn arn:aws:sns:sa-east-1:000000000000:minotif --protocol email --notification-endpoint testmail@gmail.com
+    Listar suscripciones:
+    aws --endpoint-url=http://localhost:4575 sns list-subscriptions
+    Enviar notificacion:
+     aws --endpoint-url=http://localhost:4575 sns publish  --topic-arn arn:aws:sns:sa-east-1:000000000000:minotif --message 'Mi vieja mula...!'
+     
+     
 
-    aws sns list-topics
-    aws sns create-topic --name minotif
-    
     
 
 
