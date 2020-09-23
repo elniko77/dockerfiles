@@ -1,5 +1,9 @@
 
-docker-compose para el manager del siem Wazuh
+# docker-compose para el manager del siem Wazuh
+
+Para que elasticsearch funcione, en el host:
+    
+    sudo sysctl -w vm.max_map_count=262144
 
 Instalar los agentes:
 
