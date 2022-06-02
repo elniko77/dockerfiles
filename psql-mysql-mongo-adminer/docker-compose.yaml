@@ -1,0 +1,34 @@
+# Ejemplo para levantar distintos motores de base de datos, sin persistencia, para pruebas
+version: '3.1'
+services :
+  posgresdb:
+    image: postgres:10-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: user1
+      POSTGRES_PASSWORD: cambiar
+      POSTGRES_DB: tododb
+  adminer:
+    image: dockette/adminer:full
+    ports:
+      - 8080:80
+  dbMongo:
+    image: mongo:3.6.2
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: cambiar
+
+  mysqldb:
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3306:3306" 
+    environment:
+      MYSQL_ROOT_PASSWORD: cambiar
+      MYSQL_DATABASE: baseprueba
+      MYSQL_USER: basepruebauser
+      MYSQL_PASSWORD: cambiar
