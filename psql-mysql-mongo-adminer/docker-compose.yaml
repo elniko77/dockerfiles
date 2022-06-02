@@ -10,7 +10,7 @@ services :
       POSTGRES_PASSWORD: cambiar
       POSTGRES_DB: tododb
   adminer:
-    image: dockette/adminer:full
+    image: dockette/adminer:dg
     ports:
       - 8080:80
   dbMongo:
