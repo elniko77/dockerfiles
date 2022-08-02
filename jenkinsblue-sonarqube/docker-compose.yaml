@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  jenkins:
+    user: root
+    image: "jenkinsci/blueocean:1.23.1"
+    ports:
+      - "8082:8080"
+    volumes:
+      - /docker-volumes/jenkinsblue-sonar:/var/jenkins_home
+      - /usr/bin/docker:/usr/bin/docker
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - mynet
+  sonarqube:
+    image: "sonarqube"
+    ports:
+      - "9000:9000"
+    networks:
+      - mynet
+    
+networks:
+  mynet:
+    driver: bridge
